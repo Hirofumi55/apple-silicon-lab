@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import type { ChipSpec, ChipSeries } from '../../types/chip';
 import chipsData from '../../data/chips.json';
 
@@ -57,6 +58,58 @@ export default function InteractiveCompare() {
     .filter((c): c is ChipSpec => c !== undefined);
 
   const availableChips = chips.filter(c => c.series === activeSeries);
+
+  // Custom Tooltip for Recharts
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="glass p-4 rounded-xl shadow-xl min-w-[200px] bg-bg-color/90 dark:bg-bg-color/90">
+          <p className="font-bold mb-3 border-b border-glass pb-2">{label}</p>
+          {payload.map((entry: any, index: number) => (
+            <div key={`item-${index}`} className="flex items-center justify-between text-sm mb-2">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: entry.color }} />
+                <span className="text-text-sub">{entry.name}</span>
+              </div>
+              <span className="font-bold text-text-main ml-4">{entry.value.toLocaleString()}</span>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
+  // Prepare chart data
+  const chartData = [
+    {
+      metric: 'Geekbench (Multi)',
+      ...selectedChips.reduce((acc, chip) => ({
+        ...acc,
+        [chip.name]: chip.benchmarks.geekbench6MultiCore || 0
+      }), {})
+    },
+    {
+      metric: 'Geekbench (Single)',
+      ...selectedChips.reduce((acc, chip) => ({
+        ...acc,
+        [chip.name]: chip.benchmarks.geekbench6SingleCore || 0
+      }), {})
+    },
+    ...(activeSeries === 'm' ? [{
+      metric: 'Metal Score',
+      ...selectedChips.reduce((acc, chip) => ({
+        ...acc,
+        [chip.name]: chip.benchmarks.metalScore || 0
+      }), {})
+    }] : [{
+      metric: 'AnTuTu',
+      ...selectedChips.reduce((acc, chip) => ({
+        ...acc,
+        [chip.name]: chip.benchmarks.antutu || 0
+      }), {})
+    }])
+  ];
 
   return (
     <div className="flex flex-col gap-12">
@@ -118,6 +171,60 @@ export default function InteractiveCompare() {
           You can select up to 3 chips for comparison across any series.
         </div>
       </div>
+
+      {/* Visual Chart Comparison */}
+      {selectedChips.length > 0 && (
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="glass rounded-3xl p-6 md:p-8"
+        >
+          <div className="mb-6 flex items-center justify-between">
+            <h3 className="text-2xl font-bold flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              Performance Comparison
+            </h3>
+          </div>
+          <div className="h-[400px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={chartData}
+                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="#888888" strokeOpacity={0.2} vertical={false} />
+                <XAxis 
+                  dataKey="metric" 
+                  stroke="#888888" 
+                  tick={{ fill: '#888888', fontSize: 13 }}
+                  tickMargin={12}
+                  axisLine={false}
+                  tickLine={false}
+                />
+                <YAxis 
+                  stroke="#888888" 
+                  tick={{ fill: '#888888', fontSize: 12 }} 
+                  axisLine={false}
+                  tickLine={false}
+                  tickFormatter={(value) => value >= 1000 ? `${value / 1000}k` : value}
+                />
+                <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
+                <Legend iconType="circle" wrapperStyle={{ paddingTop: '20px' }} />
+                
+                {selectedChips.map((chip) => (
+                  <Bar 
+                    key={chip.id} 
+                    dataKey={chip.name} 
+                    fill={chip.color} 
+                    radius={[6, 6, 0, 0]}
+                    maxBarSize={60}
+                    animationDuration={1500}
+                  />
+                ))}
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </motion.div>
+      )}
 
       {/* Comparison View */}
       {selectedChips.length > 0 && (
