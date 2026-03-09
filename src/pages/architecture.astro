@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Apple Silicon アーキテクチャ解説 | ユニファイドメモリとプロセスの進化"
+  description="Apple Silicon (Mシリーズ/Aシリーズ)のコア技術であるユニファイドメモリアーキテクチャやNeural Engine、プロセスルールの進化について解説します。"
+>
+  <section class="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+    <div class="mb-16">
+      <h1 class="text-5xl font-bold tracking-tight mb-4 text-center">Architecture</h1>
+      <p class="text-xl text-text-sub text-center">
+        Apple Siliconがなぜこれほどまでに高効率・高性能なのか。<br/>
+        その秘密となるコアテクノロジーを紐解きます。
+      </p>
+    </div>
+
+    <div class="space-y-16">
+      {/* UMA Section */}
+      <div class="glass p-8 rounded-3xl">
+        <h2 class="text-3xl font-bold mb-6 text-accent">Unified Memory Architecture</h2>
+        <div class="prose prose-invert max-w-none">
+          <p class="text-lg text-text-sub mb-4">
+            ユニファイドメモリアーキテクチャ（UMA）は、Apple Siliconの最大の特徴です。
+            従来のPCアーキテクチャでは、CPUとGPUがそれぞれ独立したメモリ（RAMとVRAM）を持ち、
+            データをやり取りする際にコピーが発生していました。
+          </p>
+          <p class="text-lg text-text-sub mb-4">
+            Apple Siliconでは、チップと同一パッケージ内に高速なメモリを配置し、CPU、GPU、Neural Engineなど
+            すべてのコンポーネントが同じメモリプールに直接アクセスします。
+            これにより、データのコピーが不要となり、劇的なパフォーマンス向上と電力効率の改善を実現しました。
+          </p>
+          <div class="mt-8 p-6 bg-black/20 dark:bg-white/5 rounded-2xl border border-glass">
+            <h4 class="font-bold mb-2">UMAのメリット</h4>
+            <ul class="list-disc pl-5 space-y-2 text-text-sub">
+              <li>データコピーの削減による圧倒的な省電力性</li>
+              <li>GPUがシステムメモリ全体（最大192GB）をVRAMとして活用可能</li>
+              <li>超広帯域（M Ultraシリーズでは最大800GB/s）へのアクセス</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Process Node Section */}
+      <div class="glass p-8 rounded-3xl">
+        <h2 class="text-3xl font-bold mb-6 text-accent">Process Node Evolution</h2>
+        <div class="prose prose-invert max-w-none">
+          <p class="text-lg text-text-sub mb-4">
+            TSMCの最先端プロセスを採用することで、Appleは常に業界最高水準のトランジスタ密度を誇っています。
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+            <div class="p-6 bg-black/20 dark:bg-white/5 rounded-2xl border border-glass">
+              <h3 class="text-2xl font-bold text-text-main mb-1">5nm</h3>
+              <p class="text-sm font-mono text-text-sub mb-3">M1, M2, A15</p>
+              <p class="text-sm">Apple Siliconの土台を築いた世代。X86プロセッサに対する明らかなワットパフォーマンスの優位性を確立。</p>
+            </div>
+            <div class="p-6 bg-black/20 dark:bg-white/5 rounded-2xl border border-glass">
+              <h3 class="text-2xl font-bold text-text-main mb-1">3nm</h3>
+              <p class="text-sm font-mono text-text-sub mb-3">M3, M4, M5, A17 Pro-A19</p>
+              <p class="text-sm">トランジスタ密度が飛躍的に向上。M3以降で導入されたDynamic Cachingなどの複雑なGPU機能を支える基盤。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Neural Engine Section */}
+      <div class="glass p-8 rounded-3xl">
+        <h2 class="text-3xl font-bold mb-6 text-accent">Neural Engine</h2>
+        <div class="prose prose-invert max-w-none">
+          <p class="text-lg text-text-sub mb-4">
+            AI処理、機械学習（Core ML）アクセラレーションに特化した専用ハードウェア。
+            画像認識、自然言語処理、ノイズキャンセリングなど、現代のOSを支える不可視のエンジンです。
+          </p>
+          <p class="text-lg text-text-sub">
+            M1の11 TOPS（Trillion Operations Per Second）から始まり、M4世代では38 TOPS、M5世代ではさらに
+            GPU内臓Neural Acceleratorとの統合により、Apple Intelligence向けに最適化された脅威的な処理能力を持ちます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

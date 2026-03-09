@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-apple-blue: #0071e3;
+  --color-apple-blue-light: #0066cc;
+  --color-bg-dark: #000000;
+  --color-bg-dark-grad: #1d1d1f;
+  --color-text-dark-main: #f5f5f7;
+  --color-text-dark-sub: #a1a1a6;
+  --color-surface-dark: #1c1c1e;
+  
+  --color-bg-light: #ffffff;
+  --color-bg-light-grad: #f5f5f7;
+  --color-text-light-main: #1d1d1f;
+  --color-text-light-sub: #6e6e73;
+  --color-surface-light: #ffffff;
+
+  /* Chip Colors */
+  --color-m1: #FF6B6B;
+  --color-m2: #4ECDC4;
+  --color-m3: #45B7D1;
+  --color-m4: #96CEB4;
+  --color-m5: #DDA0DD;
+  --color-a15: #FFB347;
+  --color-a16: #87CEEB;
+  --color-a17: #98D8C8;
+  --color-a18: #F7DC6F;
+  --color-a19: #BB8FCE;
+
+  --font-sans: "SF Pro Display", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-color: var(--color-bg-light);
+    --bg-grad: var(--color-bg-light-grad);
+    --text-main: var(--color-text-light-main);
+    --text-sub: var(--color-text-light-sub);
+    --accent: var(--color-apple-blue-light);
+    --surface: var(--color-surface-light);
+    --border: rgba(0, 0, 0, 0.1);
+  }
+
+  .dark {
+    --bg-color: var(--color-bg-dark);
+    --bg-grad: var(--color-bg-dark-grad);
+    --text-main: var(--color-text-dark-main);
+    --text-sub: var(--color-text-dark-sub);
+    --accent: var(--color-apple-blue);
+    --surface: var(--color-surface-dark);
+    --border: rgba(255, 255, 255, 0.1);
+  }
+
+  body {
+    @apply bg-[var(--bg-color)] text-[var(--text-main)] font-sans antialiased overflow-x-hidden;
+    background-image: linear-gradient(to bottom, var(--bg-color), var(--bg-grad));
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .text-secondary {
+    color: var(--text-sub);
+  }
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  .border-glass {
+    border-color: var(--border);
+  }
+  .glass {
+    backdrop-filter: blur(24px);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border);
+    background-color: color-mix(in srgb, var(--surface) 70%, transparent);
+  }
+}

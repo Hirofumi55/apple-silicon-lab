@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import chips from '../data/chips.json';
+import type { ChipSpec } from '../types/chip';
+
+const aSeries = (chips as ChipSpec[]).filter(c => c.series === 'a');
+---
+
+<BaseLayout 
+  title="Aシリーズ比較 | A15 A16 A17 A18 A19 iPhone/iPad チップ性能"
+  description="Apple A15〜A19チップのスペック・ベンチマーク完全比較"
+>
+  <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16">
+      <h1 class="text-5xl font-bold tracking-tight mb-4">A Series</h1>
+      <p class="text-xl text-text-sub max-w-2xl">
+        iPhoneやiPadの驚異的な性能を支えるモバイルプロセッサ。
+        常にスマートフォンのベンチマークを再定義し続ける。
+      </p>
+    </div>
+
+    <!-- 簡易スペック一覧テーブル (横スクロール対応) -->
+    <div class="relative overflow-x-auto shadow-md sm:rounded-2xl glass mb-20 scrollbar-hide">
+      <table class="w-full text-sm text-left text-text-sub whitespace-nowrap">
+        <thead class="text-xs text-text-main uppercase bg-black/5 dark:bg-white/5 border-b border-glass sticky top-0">
+          <tr>
+            <th scope="col" class="px-6 py-4 rounded-tl-2xl bg-surface/80 backdrop-blur-md sticky left-0 z-10 w-48 border-r border-glass">
+              Chip Models
+            </th>
+            <th scope="col" class="px-6 py-4">Release</th>
+            <th scope="col" class="px-6 py-4">Node</th>
+            <th scope="col" class="px-6 py-4">CPU (P+E)</th>
+            <th scope="col" class="px-6 py-4">GPU</th>
+            <th scope="col" class="px-6 py-4">RAM</th>
+            <th scope="col" class="px-6 py-4">Neural TOPS</th>
+            <th scope="col" class="px-6 py-4">AnTuTu Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {aSeries.map((chip, index) => (
+            <tr class={`${index !== aSeries.length - 1 ? 'border-b border-glass' : ''} hover:bg-black/5 dark:hover:bg-white/5 transition-colors group`}>
+              <th scope="row" class="px-6 py-4 font-medium text-text-main group-hover:bg-black/5 dark:group-hover:bg-white/5 bg-surface/80 backdrop-blur-md sticky left-0 z-10 w-48 border-r border-glass transition-colors">
+                <a href={`/chip/${chip.slug}`} class="flex items-center gap-2 hover:text-accent">
+                  <div class="w-3 h-3 rounded-full" style={`background-color: ${chip.color};`}></div>
+                  {chip.name}
+                </a>
+              </th>
+              <td class="px-6 py-4">{chip.releaseDate}</td>
+              <td class="px-6 py-4">{chip.processNode}</td>
+              <td class="px-6 py-4">
+                {chip.cpu.totalCores} ({chip.cpu.performanceCores}P + {chip.cpu.efficiencyCores}E)
+              </td>
+              <td class="px-6 py-4">{chip.gpu.cores} cores</td>
+              <td class="px-6 py-4">{chip.memory.maxCapacityGB} GB {chip.memory.type}</td>
+              <td class="px-6 py-4">{chip.neuralEngine.tops}</td>
+              <td class="px-6 py-4 font-semibold text-text-main">
+                {chip.benchmarks.antutu?.toLocaleString() || '-'}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>

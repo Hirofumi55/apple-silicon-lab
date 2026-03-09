@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import chipsData from '../../data/chips.json';
+import type { ChipSpec } from '../../types/chip';
+import CountUpNumber from '../../components/common/CountUpNumber';
+
+export async function getStaticPaths() {
+  const chips = chipsData as ChipSpec[];
+  return chips.map(chip => ({
+    params: { slug: chip.slug },
+    props: { chip },
+  }));
+}
+
+interface Props {
+  chip: ChipSpec;
+}
+
+const { chip } = Astro.props;
+---
+
+<BaseLayout 
+  title={`${chip.name} スペック詳細・ベンチマーク | Apple Silicon Lab`}
+  description={`${chip.name}のCPU、GPU、Neural Engineの詳細スペックやベンチマークスコア、搭載デバイス一覧。`}
+>
+  <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-20">
+    <div class="mb-8">
+      <a href={`/${chip.series}-series`} class="text-text-sub hover:text-accent flex items-center gap-1 text-sm font-medium transition-colors mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Back to {chip.series.toUpperCase()} Series
+      </a>
+      
+      <div class="flex items-center gap-4 mb-2">
+        <div class="w-8 h-8 rounded-full shadow-inner" style={`background-color: ${chip.color};`}></div>
+        <h1 class="text-5xl font-bold tracking-tight">{chip.name}</h1>
+      </div>
+      <p class="text-xl text-text-sub ml-12">Released {chip.releaseDate}</p>
+    </div>
+
+    <!-- Overview Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="glass p-6 rounded-3xl col-span-1 md:col-span-2 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 blur-3xl opacity-20 rounded-full" style={`background-color: ${chip.color};`}></div>
+        <h2 class="text-lg font-semibold mb-4 text-text-sub">Highlights</h2>
+        <ul class="space-y-3 relative z-10">
+          {chip.highlights.map(h => (
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 shrink-0 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4L12 14.01l-3-3"></path></svg>
+              <span class="text-lg">{h}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="glass p-6 rounded-3xl flex flex-col justify-center">
+        <h2 class="text-sm font-semibold mb-2 text-text-sub uppercase tracking-wider">Process Node</h2>
+        <div class="text-4xl font-bold tracking-tight">{chip.processNode}</div>
+        {chip.transistors && (
+          <div class="mt-4 pt-4 border-t border-glass">
+            <h2 class="text-sm font-semibold mb-1 text-text-sub uppercase tracking-wider">Transistors</h2>
+            <div class="text-2xl font-semibold">{chip.transistors}</div>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Detailed Specs -->
+    <h2 class="text-3xl font-bold mb-6">Technical Specifications</h2>
+    <div class="space-y-6">
+      <!-- CPU & GPU Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-8 rounded-3xl">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-sub"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+            CPU
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center border-b border-glass pb-2">
+              <span class="text-text-sub">Total Cores</span>
+              <span class="font-bold text-lg">{chip.cpu.totalCores}</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-glass pb-2">
+              <span class="text-text-sub">Performance Cores</span>
+              <span class="font-medium">{chip.cpu.performanceCores}</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-glass pb-2">
+              <span class="text-text-sub">Efficiency Cores</span>
+              <span class="font-medium">{chip.cpu.efficiencyCores}</span>
+            </li>
+            {chip.cpu.superCores !== undefined && (
+              <li class="flex justify-between items-center border-b border-glass pb-2">
+                <span class="text-text-sub">Super Cores</span>
+                <span class="font-bold text-accent">{chip.cpu.superCores}</span>
+              </li>
+            )}
+            {chip.cpu.maxClockSpeed && (
+              <li class="flex justify-between items-center pb-2">
+                <span class="text-text-sub">Max Clock Speed</span>
+                <span class="font-medium">{chip.cpu.maxClockSpeed}</span>
+              </li>
+            )}
+          </ul>
+        </div>
+
+        <div class="glass p-8 rounded-3xl">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-sub"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            GPU & Neural Engine
+          </h3>
+          <ul class="space-y-4 border-b border-glass pb-6 mb-6">
+            <li class="flex justify-between items-center border-b border-glass pb-2">
+              <span class="text-text-sub">GPU Cores</span>
+              <span class="font-bold text-lg">{chip.gpu.cores}</span>
+            </li>
+            <li class="pt-2">
+              <span class="text-text-sub block mb-2 text-sm">GPU Features</span>
+              <div class="flex flex-wrap gap-2">
+                {chip.gpu.features.map(f => (
+                  <span class="px-2 py-1 bg-black/10 dark:bg-white/10 rounded-md text-xs font-medium">{f}</span>
+                ))}
+              </div>
+            </li>
+          </ul>
+          
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center border-b border-glass pb-2">
+              <span class="text-text-sub">Neural Engine Cores</span>
+              <span class="font-bold">{chip.neuralEngine.cores}</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-text-sub">Performance</span>
+              <span class="font-bold text-lg">{chip.neuralEngine.tops} <span class="text-sm font-normal text-text-sub">TOPS</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Memory & Benchmarks Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-8 rounded-3xl">
+          <h3 class="text-xl font-bold mb-6">Unified Memory</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center border-b border-glass pb-2">
+              <span class="text-text-sub">Type</span>
+              <span class="font-medium">{chip.memory.type}</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-glass pb-2">
+              <span class="text-text-sub">Max Capacity</span>
+              <span class="font-bold text-lg">{chip.memory.maxCapacityGB} GB</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-text-sub">Bandwidth</span>
+              <span class="font-bold text-lg">{chip.memory.bandwidthGBs} <span class="text-sm font-normal text-text-sub">GB/s</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glass p-8 rounded-3xl">
+          <h3 class="text-xl font-bold mb-6">Benchmarks</h3>
+          <ul class="space-y-4">
+            {chip.benchmarks.geekbench6MultiCore && (
+              <li class="flex flex-col gap-1 border-b border-glass pb-3">
+                <span class="text-text-sub text-sm">Geekbench 6 (Multi-Core)</span>
+                <div class="flex items-end gap-2">
+                  <CountUpNumber 
+                    client:visible 
+                    target={chip.benchmarks.geekbench6MultiCore} 
+                    className="font-bold text-2xl text-accent" 
+                  />
+                </div>
+              </li>
+            )}
+            {chip.benchmarks.geekbench6SingleCore && (
+              <li class="flex flex-col gap-1 border-b border-glass pb-3">
+                <span class="text-text-sub text-sm">Geekbench 6 (Single-Core)</span>
+                <div class="flex items-end gap-2">
+                  <CountUpNumber 
+                    client:visible 
+                    target={chip.benchmarks.geekbench6SingleCore} 
+                    className="font-bold text-xl" 
+                  />
+                </div>
+              </li>
+            )}
+            {chip.benchmarks.metalScore && (
+              <li class="flex flex-col gap-1 border-b border-glass pb-3">
+                <span class="text-text-sub text-sm">Metal Score (GPU)</span>
+                <div class="flex items-end gap-2">
+                  <CountUpNumber 
+                    client:visible 
+                    target={chip.benchmarks.metalScore} 
+                    className="font-bold text-xl" 
+                  />
+                </div>
+              </li>
+            )}
+            {chip.benchmarks.antutu && (
+              <li class="flex flex-col gap-1 border-b border-glass pb-3">
+                <span class="text-text-sub text-sm">AnTuTu Score</span>
+                <div class="flex items-end gap-2">
+                  <CountUpNumber 
+                    client:visible 
+                    target={chip.benchmarks.antutu} 
+                    className="font-bold text-2xl text-accent" 
+                  />
+                </div>
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Devices List -->
+    <div class="mt-12 glass p-8 rounded-3xl">
+      <h3 class="text-xl font-bold mb-6">搭載デバイス一覧 (一部)</h3>
+      <div class="flex flex-wrap gap-3">
+        {chip.devices.map(device => (
+          <span class="px-4 py-2 border border-glass rounded-full text-sm font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-default">
+            {device}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

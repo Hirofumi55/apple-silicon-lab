@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import chips from '../data/chips.json';
+import type { ChipSpec } from '../types/chip';
+import CountUpNumber from '../components/common/CountUpNumber';
+
+const mSeries = (chips as ChipSpec[]).filter(c => c.series === 'm');
+const aSeries = (chips as ChipSpec[]).filter(c => c.series === 'a');
+---
+
+<BaseLayout 
+  title="Apple Silicon Lab | M1〜M5 / Aシリーズ チップ性能完全比較"
+>
+  {/* Hero Section */}
+  <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden mb-32">
+    <div class="absolute inset-0 z-0">
+      <img src="/images/apple_silicon_hero.png" alt="Apple Silicon Background" class="w-full h-full object-cover opacity-40 mix-blend-screen" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-color)] via-transparent to-[var(--bg-color)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--accent)_0%,transparent_70%)] opacity-30 mix-blend-screen"></div>
+    </div>
+    <div class="z-10 max-w-4xl mx-auto space-y-8">
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-text-main to-text-sub inline-block">
+        Apple Siliconの全貌
+      </h1>
+      <p class="text-xl md:text-2xl text-text-sub max-w-2xl mx-auto font-light leading-relaxed">
+        比類なきパフォーマンス。驚異的な電力効率。<br/>
+        M1からM5、A15からA19までの進化の軌跡。
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8">
+        <a href="/compare" class="px-8 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition-transform">
+          インタラクティブ比較ツール
+        </a>
+        <a href="/timeline" class="px-8 py-3 rounded-full glass font-medium hover:bg-surface/80 transition-colors">
+          進化の歴史を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* M-Series Grid Section */}
+  <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-32">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-glass pb-4">
+      <div>
+        <h2 class="text-4xl font-bold tracking-tight mb-2">M Series</h2>
+        <p class="text-lg text-text-sub">Mac, iPad Proの心臓部</p>
+      </div>
+      <a href="/m-series" class="text-accent hover:underline flex items-center gap-1 font-medium mt-4 md:mt-0">
+        すべて見る
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {mSeries.map(chip => (
+        <a href={`/chip/${chip.slug}`} class="group relative block rounded-3xl p-6 glass transition-all hover:-translate-y-1 hover:shadow-2xl overflow-hidden" style={`--chip-color: ${chip.color};`}>
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={`background: radial-gradient(circle at 50% 100%, ${chip.color}, transparent 70%);`}></div>
+          
+          <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-4 h-4 rounded-full shadow-inner" style={`background-color: ${chip.color};`}></div>
+              <h3 class="text-2xl font-bold">{chip.name}</h3>
+            </div>
+            
+            <div class="space-y-3 mt-8">
+              <div class="flex justify-between border-b border-glass pb-2">
+                <span class="text-text-sub text-sm">プロセス</span>
+                <span class="font-medium text-sm">{chip.processNode}</span>
+              </div>
+              <div class="flex justify-between border-b border-glass pb-2">
+                <span class="text-text-sub text-sm">CPU / GPU コア</span>
+                <span class="font-medium text-sm">{chip.cpu.totalCores} / {chip.gpu.cores}</span>
+              </div>
+              <div class="flex justify-between border-b border-glass pb-2">
+                <span class="text-text-sub text-sm">Neural Engine</span>
+                <span class="font-medium text-sm">{chip.neuralEngine.tops} TOPS</span>
+              </div>
+              {chip.benchmarks.geekbench6MultiCore && (
+                <div class="flex justify-between pt-2">
+                  <span class="text-text-sub text-sm">Geekbench 6 (Multi)</span>
+                  <CountUpNumber 
+                    client:visible 
+                    target={chip.benchmarks.geekbench6MultiCore} 
+                    className="font-bold text-accent" 
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {/* A-Series Grid Section */}
+  <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-glass pb-4">
+      <div>
+        <h2 class="text-4xl font-bold tracking-tight mb-2">A Series</h2>
+        <p class="text-lg text-text-sub">iPhone, iPadの源泉</p>
+      </div>
+      <a href="/a-series" class="text-accent hover:underline flex items-center gap-1 font-medium mt-4 md:mt-0">
+        すべて見る
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {aSeries.map(chip => (
+        <a href={`/chip/${chip.slug}`} class="group relative block rounded-3xl p-6 glass transition-all hover:-translate-y-1 hover:shadow-2xl overflow-hidden" style={`--chip-color: ${chip.color};`}>
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={`background: radial-gradient(circle at 50% 100%, ${chip.color}, transparent 70%);`}></div>
+          
+          <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-4 h-4 rounded-full shadow-inner" style={`background-color: ${chip.color};`}></div>
+              <h3 class="text-2xl font-bold">{chip.name}</h3>
+            </div>
+            
+            <div class="space-y-3 mt-8">
+              <div class="flex justify-between border-b border-glass pb-2">
+                <span class="text-text-sub text-sm">プロセス</span>
+                <span class="font-medium text-sm">{chip.processNode}</span>
+              </div>
+              <div class="flex justify-between border-b border-glass pb-2">
+                <span class="text-text-sub text-sm">Neural Engine</span>
+                <span class="font-medium text-sm">{chip.neuralEngine.tops} TOPS</span>
+              </div>
+              {chip.benchmarks.antutu && (
+                <div class="flex justify-between pt-2">
+                  <span class="text-text-sub text-sm">AnTuTu Score</span>
+                  <CountUpNumber 
+                    client:visible 
+                    target={chip.benchmarks.antutu} 
+                    className="font-bold text-accent" 
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TimelineComponent from '../components/timeline/Timeline';
+---
+
+<BaseLayout 
+  title="Apple Silicon 進化の歴史 | 2020〜2026 タイムライン"
+  description="Apple M1チップからM5チップ、A15 BionicからA19 Proに至るまでのApple Siliconの年表と進化の歴史。"
+>
+  <section class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-20 overflow-hidden">
+    <div class="mb-16">
+      <h1 class="text-5xl font-bold tracking-tight mb-4">Evolution Timeline</h1>
+      <p class="text-xl text-text-sub max-w-2xl">
+        2020年の初代M1チップの衝撃的なデビューから最新のアーキテクチャまで。
+        年々前人未到のスペックを叩き出すApple Siliconの進化の全貌。
+      </p>
+    </div>
+
+    <!-- React Island for GSAP Timeline -->
+    <TimelineComponent client:load />
+
+    <div class="mt-20 glass p-8 rounded-3xl">
+      <h2 class="text-2xl font-bold mb-4">マイルストーンのハイライト</h2>
+      <ul class="space-y-4 text-text-sub">
+        <li>
+          <strong class="text-text-main">2020年11月 - M1登場:</strong> 
+          業界を震撼させたApple初のMac用独自チップ。UMA（ユニファイドメモリアーキテクチャ）により、驚異的な電力効率を実現。
+        </li>
+        <li>
+          <strong class="text-text-main">2021年10月 - M1 Pro / Max:</strong> 
+          プロの世界へ本格進出。メモリ帯域を大幅に拡張し、ビデオ編集などの高負荷タスクをポータブル機で可能に。
+        </li>
+        <li>
+          <strong class="text-text-main">2022年3月 - M1 Ultra:</strong> 
+          UltraFusionテクノロジーにより、2つのM1 Maxダイを結合。デスクトップワークステーションの常識を変える。
+        </li>
+        <li>
+          <strong class="text-text-main">2023年10月 - M3ファミリー:</strong> 
+          業界初の3nmプロセスを採用。Dynamic Caching機能とハードウェア対応レイトレーシングによりGPU性能が飛躍的に進化。
+        </li>
+        <li>
+          <strong class="text-text-main">2025年 - M5ファミリー:</strong> 
+          Superコアを採用した新アーキテクチャ。GPUにNeural Acceleratorを統合し、AI処理能力が劇的に向上。
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
