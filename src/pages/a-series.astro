@@ -4,6 +4,7 @@ import chips from '../data/chips.json';
 import type { ChipSpec } from '../types/chip';
 
 const aSeries = (chips as ChipSpec[]).filter(c => c.series === 'a');
+const maxAntutu = Math.max(...aSeries.map(c => c.benchmarks.antutu || 0));
 ---
 
 <BaseLayout 
@@ -53,8 +54,16 @@ const aSeries = (chips as ChipSpec[]).filter(c => c.series === 'a');
               <td class="px-6 py-4">{chip.gpu.cores} cores</td>
               <td class="px-6 py-4">{chip.memory.maxCapacityGB} GB {chip.memory.type}</td>
               <td class="px-6 py-4">{chip.neuralEngine.tops}</td>
-              <td class="px-6 py-4 font-semibold text-text-main">
-                {chip.benchmarks.antutu?.toLocaleString() || '-'}
+              <td class="px-6 py-4 font-semibold text-text-main min-w-[200px]">
+                <div class="flex flex-col gap-2">
+                  <span>{chip.benchmarks.antutu?.toLocaleString() || '-'}</span>
+                  {chip.benchmarks.antutu && (
+                    <div class="w-full bg-black/10 dark:bg-white/10 rounded-full h-1.5 overflow-hidden">
+                      <div class="h-1.5 rounded-full transition-all duration-1000 ease-out" 
+                           style={`width: ${(chip.benchmarks.antutu / maxAntutu) * 100}%; background-color: ${chip.color};`}></div>
+                    </div>
+                  )}
+                </div>
               </td>
             </tr>
           ))}

@@ -4,6 +4,7 @@ import chips from '../data/chips.json';
 import type { ChipSpec } from '../types/chip';
 
 const mSeries = (chips as ChipSpec[]).filter(c => c.series === 'm');
+const maxGeekbench = Math.max(...mSeries.map(c => c.benchmarks.geekbench6MultiCore || 0));
 ---
 
 <BaseLayout 
@@ -53,8 +54,16 @@ const mSeries = (chips as ChipSpec[]).filter(c => c.series === 'm');
               <td class="px-6 py-4">{chip.gpu.cores} cores</td>
               <td class="px-6 py-4">{chip.memory.bandwidthGBs} GB/s</td>
               <td class="px-6 py-4">{chip.memory.maxCapacityGB} GB</td>
-              <td class="px-6 py-4 font-semibold text-text-main">
-                {chip.benchmarks.geekbench6MultiCore?.toLocaleString() || '-'}
+              <td class="px-6 py-4 font-semibold text-text-main min-w-[200px]">
+                <div class="flex flex-col gap-2">
+                  <span>{chip.benchmarks.geekbench6MultiCore?.toLocaleString() || '-'}</span>
+                  {chip.benchmarks.geekbench6MultiCore && (
+                    <div class="w-full bg-black/10 dark:bg-white/10 rounded-full h-1.5 overflow-hidden">
+                      <div class="h-1.5 rounded-full transition-all duration-1000 ease-out" 
+                           style={`width: ${(chip.benchmarks.geekbench6MultiCore / maxGeekbench) * 100}%; background-color: ${chip.color};`}></div>
+                    </div>
+                  )}
+                </div>
               </td>
             </tr>
           ))}
