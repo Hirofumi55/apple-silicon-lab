@@ -8,13 +8,43 @@
     "releaseDate": "2020-11",
     "processNode": "5nm",
     "transistors": "16 billion",
-    "cpu": { "totalCores": 8, "performanceCores": 4, "efficiencyCores": 4, "maxClockSpeed": "3.2 GHz" },
-    "gpu": { "cores": "7-8", "features": ["Unified Memory Architecture"] },
-    "neuralEngine": { "cores": 16, "tops": 11 },
-    "memory": { "type": "LPDDR4X", "maxCapacityGB": 16, "bandwidthGBs": 68.25 },
-    "benchmarks": { "geekbench6SingleCore": 2330, "geekbench6MultiCore": 8260, "metalScore": 32000 },
-    "devices": ["MacBook Air M1", "MacBook Pro 13\" M1", "Mac mini M1", "iMac 24\"", "iPad Pro"],
-    "highlights": ["Apple初のMac向け独自チップ", "電力効率の革命"],
+    "cpu": {
+      "totalCores": 8,
+      "performanceCores": 4,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.2 GHz"
+    },
+    "gpu": {
+      "cores": "7-8",
+      "features": [
+        "Unified Memory Architecture"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 11
+    },
+    "memory": {
+      "type": "LPDDR4X",
+      "maxCapacityGB": 16,
+      "bandwidthGBs": 68.25
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2355,
+      "geekbench6MultiCore": 8415,
+      "metalScore": 32000
+    },
+    "devices": [
+      "MacBook Air M1",
+      "MacBook Pro 13\" M1",
+      "Mac mini M1",
+      "iMac 24\"",
+      "iPad Pro"
+    ],
+    "highlights": [
+      "Apple初のMac向け独自チップ",
+      "電力効率の革命"
+    ],
     "color": "#FF6B6B"
   },
   {
@@ -26,13 +56,41 @@
     "releaseDate": "2021-10",
     "processNode": "5nm",
     "transistors": "33.7 billion",
-    "cpu": { "totalCores": 10, "performanceCores": 8, "efficiencyCores": 2, "maxClockSpeed": "3.22 GHz" },
-    "gpu": { "cores": "14-16", "features": ["ProRes accelerator"] },
-    "neuralEngine": { "cores": 16, "tops": 11 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 32, "bandwidthGBs": 200 },
-    "benchmarks": { "geekbench6SingleCore": 2380, "geekbench6MultiCore": 12300, "metalScore": 65000 },
-    "devices": ["MacBook Pro 14\" (2021)", "MacBook Pro 16\" (2021)"],
-    "highlights": ["プロ向けMシリーズ初登場", "200GB/sの広帯域メモリ", "ProResハードウェアエンコード"],
+    "cpu": {
+      "totalCores": 10,
+      "performanceCores": 8,
+      "efficiencyCores": 2,
+      "maxClockSpeed": "3.22 GHz"
+    },
+    "gpu": {
+      "cores": "14-16",
+      "features": [
+        "ProRes accelerator"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 11
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 32,
+      "bandwidthGBs": 200
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2378,
+      "geekbench6MultiCore": 12313,
+      "metalScore": 69473
+    },
+    "devices": [
+      "MacBook Pro 14\" (2021)",
+      "MacBook Pro 16\" (2021)"
+    ],
+    "highlights": [
+      "プロ向けMシリーズ初登場",
+      "200GB/sの広帯域メモリ",
+      "ProResハードウェアエンコード"
+    ],
     "color": "#FF6B6B"
   },
   {
@@ -44,13 +102,42 @@
     "releaseDate": "2021-10",
     "processNode": "5nm",
     "transistors": "57 billion",
-    "cpu": { "totalCores": 10, "performanceCores": 8, "efficiencyCores": 2, "maxClockSpeed": "3.22 GHz" },
-    "gpu": { "cores": "24-32", "features": ["Multiple ProRes accelerators", "High-bandwidth memory"] },
-    "neuralEngine": { "cores": 16, "tops": 11 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 64, "bandwidthGBs": 400 },
-    "benchmarks": { "geekbench6SingleCore": 2385, "geekbench6MultiCore": 12400, "metalScore": 108000 },
-    "devices": ["MacBook Pro 14\" (2021)", "MacBook Pro 16\" (2021)", "Mac Studio (2022)"],
-    "highlights": ["M1 Proを倍増したGPUコア", "400GB/sという驚異的なメモリ帯域"],
+    "cpu": {
+      "totalCores": 10,
+      "performanceCores": 8,
+      "efficiencyCores": 2,
+      "maxClockSpeed": "3.22 GHz"
+    },
+    "gpu": {
+      "cores": "24-32",
+      "features": [
+        "Multiple ProRes accelerators",
+        "High-bandwidth memory"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 11
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 64,
+      "bandwidthGBs": 400
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2374,
+      "geekbench6MultiCore": 12256,
+      "metalScore": 108000
+    },
+    "devices": [
+      "MacBook Pro 14\" (2021)",
+      "MacBook Pro 16\" (2021)",
+      "Mac Studio (2022)"
+    ],
+    "highlights": [
+      "M1 Proを倍増したGPUコア",
+      "400GB/sという驚異的なメモリ帯域"
+    ],
     "color": "#FF6B6B"
   },
   {
@@ -62,13 +149,39 @@
     "releaseDate": "2022-03",
     "processNode": "5nm",
     "transistors": "114 billion",
-    "cpu": { "totalCores": 20, "performanceCores": 16, "efficiencyCores": 4, "maxClockSpeed": "3.22 GHz" },
-    "gpu": { "cores": "48-64", "features": ["UltraFusion architecture"] },
-    "neuralEngine": { "cores": 32, "tops": 22 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 128, "bandwidthGBs": 800 },
-    "benchmarks": { "geekbench6SingleCore": 2400, "geekbench6MultiCore": 23500, "metalScore": 150000 },
-    "devices": ["Mac Studio (2022)"],
-    "highlights": ["UltraFusionによるダイ接続", "最高峰の20コアCPUと64コアGPU"],
+    "cpu": {
+      "totalCores": 20,
+      "performanceCores": 16,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.22 GHz"
+    },
+    "gpu": {
+      "cores": "48-64",
+      "features": [
+        "UltraFusion architecture"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 32,
+      "tops": 22
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 128,
+      "bandwidthGBs": 800
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2398,
+      "geekbench6MultiCore": 18435,
+      "metalScore": 150000
+    },
+    "devices": [
+      "Mac Studio (2022)"
+    ],
+    "highlights": [
+      "UltraFusionによるダイ接続",
+      "最高峰の20コアCPUと64コアGPU"
+    ],
     "color": "#FF6B6B"
   },
   {
@@ -80,13 +193,43 @@
     "releaseDate": "2022-06",
     "processNode": "5nm (Enhanced)",
     "transistors": "20 billion",
-    "cpu": { "totalCores": 8, "performanceCores": 4, "efficiencyCores": 4, "maxClockSpeed": "3.5 GHz" },
-    "gpu": { "cores": "8-10", "features": ["Media Engine included"] },
-    "neuralEngine": { "cores": 16, "tops": 15.8 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 24, "bandwidthGBs": 100 },
-    "benchmarks": { "geekbench6SingleCore": 2580, "geekbench6MultiCore": 9700, "metalScore": 45000 },
-    "devices": ["MacBook Air M2", "MacBook Pro 13\" M2", "iPad Pro M2", "Mac mini (2023)"],
-    "highlights": ["第2世代の5nmプロセス", "最大24GBメモリ対応", "メディアエンジン搭載"],
+    "cpu": {
+      "totalCores": 8,
+      "performanceCores": 4,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.5 GHz"
+    },
+    "gpu": {
+      "cores": "8-10",
+      "features": [
+        "Media Engine included"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 15.8
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 24,
+      "bandwidthGBs": 100
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2589,
+      "geekbench6MultiCore": 9742,
+      "metalScore": 45000
+    },
+    "devices": [
+      "MacBook Air M2",
+      "MacBook Pro 13\" M2",
+      "iPad Pro M2",
+      "Mac mini (2023)"
+    ],
+    "highlights": [
+      "第2世代の5nmプロセス",
+      "最大24GBメモリ対応",
+      "メディアエンジン搭載"
+    ],
     "color": "#4ECDC4"
   },
   {
@@ -98,13 +241,40 @@
     "releaseDate": "2023-01",
     "processNode": "5nm",
     "transistors": "40 billion",
-    "cpu": { "totalCores": 12, "performanceCores": 8, "efficiencyCores": 4, "maxClockSpeed": "3.5 GHz" },
-    "gpu": { "cores": "16-19", "features": ["Media Engine"] },
-    "neuralEngine": { "cores": 16, "tops": 15.8 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 32, "bandwidthGBs": 200 },
-    "benchmarks": { "geekbench6SingleCore": 2650, "geekbench6MultiCore": 14200, "metalScore": 80000 },
-    "devices": ["MacBook Pro 14\" (2023)", "Mac mini (2023)"],
-    "highlights": ["M1 Proよりコア増量", "さらに洗練された電力効率"],
+    "cpu": {
+      "totalCores": 12,
+      "performanceCores": 8,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.5 GHz"
+    },
+    "gpu": {
+      "cores": "16-19",
+      "features": [
+        "Media Engine"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 15.8
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 32,
+      "bandwidthGBs": 200
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2642,
+      "geekbench6MultiCore": 14349,
+      "metalScore": 69941
+    },
+    "devices": [
+      "MacBook Pro 14\" (2023)",
+      "Mac mini (2023)"
+    ],
+    "highlights": [
+      "M1 Proよりコア増量",
+      "さらに洗練された電力効率"
+    ],
     "color": "#4ECDC4"
   },
   {
@@ -116,13 +286,41 @@
     "releaseDate": "2023-01",
     "processNode": "5nm",
     "transistors": "67 billion",
-    "cpu": { "totalCores": 12, "performanceCores": 8, "efficiencyCores": 4, "maxClockSpeed": "3.5 GHz" },
-    "gpu": { "cores": "30-38", "features": ["Multiple Media Engines"] },
-    "neuralEngine": { "cores": 16, "tops": 15.8 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 96, "bandwidthGBs": 400 },
-    "benchmarks": { "geekbench6SingleCore": 2700, "geekbench6MultiCore": 14500, "metalScore": 135000 },
-    "devices": ["MacBook Pro 14\" (2023)", "MacBook Pro 16\" (2023)", "Mac Studio (2023)"],
-    "highlights": ["大容量96GBメモリ対応", "グラフィックスワークロードに最適化"],
+    "cpu": {
+      "totalCores": 12,
+      "performanceCores": 8,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.5 GHz"
+    },
+    "gpu": {
+      "cores": "30-38",
+      "features": [
+        "Multiple Media Engines"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 15.8
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 96,
+      "bandwidthGBs": 400
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2749,
+      "geekbench6MultiCore": 14741,
+      "metalScore": 147240
+    },
+    "devices": [
+      "MacBook Pro 14\" (2023)",
+      "MacBook Pro 16\" (2023)",
+      "Mac Studio (2023)"
+    ],
+    "highlights": [
+      "大容量96GBメモリ対応",
+      "グラフィックスワークロードに最適化"
+    ],
     "color": "#4ECDC4"
   },
   {
@@ -134,13 +332,40 @@
     "releaseDate": "2023-06",
     "processNode": "5nm",
     "transistors": "134 billion",
-    "cpu": { "totalCores": 24, "performanceCores": 16, "efficiencyCores": 8, "maxClockSpeed": "3.5 GHz" },
-    "gpu": { "cores": "60-76", "features": ["UltraFusion"] },
-    "neuralEngine": { "cores": 32, "tops": 31.6 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 192, "bandwidthGBs": 800 },
-    "benchmarks": { "geekbench6SingleCore": 2800, "geekbench6MultiCore": 28000, "metalScore": 220000 },
-    "devices": ["Mac Studio (2023)", "Mac Pro (2023)"],
-    "highlights": ["モンスター級192GBユニファイドメモリ", "Mac Proに搭載される頂点の性能"],
+    "cpu": {
+      "totalCores": 24,
+      "performanceCores": 16,
+      "efficiencyCores": 8,
+      "maxClockSpeed": "3.5 GHz"
+    },
+    "gpu": {
+      "cores": "60-76",
+      "features": [
+        "UltraFusion"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 32,
+      "tops": 31.6
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 192,
+      "bandwidthGBs": 800
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2832,
+      "geekbench6MultiCore": 21497,
+      "metalScore": 222000
+    },
+    "devices": [
+      "Mac Studio (2023)",
+      "Mac Pro (2023)"
+    ],
+    "highlights": [
+      "モンスター級192GBユニファイドメモリ",
+      "Mac Proに搭載される頂点の性能"
+    ],
     "color": "#4ECDC4"
   },
   {
@@ -152,13 +377,43 @@
     "releaseDate": "2023-10",
     "processNode": "3nm",
     "transistors": "25 billion",
-    "cpu": { "totalCores": 8, "performanceCores": 4, "efficiencyCores": 4, "maxClockSpeed": "4.05 GHz" },
-    "gpu": { "cores": "8-10", "features": ["Dynamic Caching", "Hardware-accelerated Ray Tracing", "Mesh Shading"] },
-    "neuralEngine": { "cores": 16, "tops": 18 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 24, "bandwidthGBs": 100 },
-    "benchmarks": { "geekbench6SingleCore": 3050, "geekbench6MultiCore": 11700, "metalScore": 47000 },
-    "devices": ["MacBook Pro 14\" (2023)", "iMac 24\" (2023)", "MacBook Air M3"],
-    "highlights": ["業界初の3nmプロセス", "Dynamic Cachingとレイトレーシング"],
+    "cpu": {
+      "totalCores": 8,
+      "performanceCores": 4,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "4.05 GHz"
+    },
+    "gpu": {
+      "cores": "8-10",
+      "features": [
+        "Dynamic Caching",
+        "Hardware-accelerated Ray Tracing",
+        "Mesh Shading"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 18
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 24,
+      "bandwidthGBs": 100
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3076,
+      "geekbench6MultiCore": 11863,
+      "metalScore": 47418
+    },
+    "devices": [
+      "MacBook Pro 14\" (2023)",
+      "iMac 24\" (2023)",
+      "MacBook Air M3"
+    ],
+    "highlights": [
+      "業界初の3nmプロセス",
+      "Dynamic Cachingとレイトレーシング"
+    ],
     "color": "#45B7D1"
   },
   {
@@ -170,13 +425,41 @@
     "releaseDate": "2023-10",
     "processNode": "3nm",
     "transistors": "37 billion",
-    "cpu": { "totalCores": 12, "performanceCores": 6, "efficiencyCores": 6, "maxClockSpeed": "4.05 GHz" },
-    "gpu": { "cores": "14-18", "features": ["Dynamic Caching", "Hardware Ray Tracing"] },
-    "neuralEngine": { "cores": 16, "tops": 18 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 36, "bandwidthGBs": 150 },
-    "benchmarks": { "geekbench6SingleCore": 3100, "geekbench6MultiCore": 15500, "metalScore": 75000 },
-    "devices": ["MacBook Pro 14\" (2023)", "MacBook Pro 16\" (2023)"],
-    "highlights": ["Pコア・Eコアのバランスを再調整", "36GBという新しいメモリ境地"],
+    "cpu": {
+      "totalCores": 12,
+      "performanceCores": 6,
+      "efficiencyCores": 6,
+      "maxClockSpeed": "4.05 GHz"
+    },
+    "gpu": {
+      "cores": "14-18",
+      "features": [
+        "Dynamic Caching",
+        "Hardware Ray Tracing"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 18
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 36,
+      "bandwidthGBs": 150
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3105,
+      "geekbench6MultiCore": 15249,
+      "metalScore": 68250
+    },
+    "devices": [
+      "MacBook Pro 14\" (2023)",
+      "MacBook Pro 16\" (2023)"
+    ],
+    "highlights": [
+      "Pコア・Eコアのバランスを再調整",
+      "36GBという新しいメモリ境地"
+    ],
     "color": "#45B7D1"
   },
   {
@@ -188,13 +471,41 @@
     "releaseDate": "2023-10",
     "processNode": "3nm",
     "transistors": "92 billion",
-    "cpu": { "totalCores": 16, "performanceCores": 12, "efficiencyCores": 4, "maxClockSpeed": "4.05 GHz" },
-    "gpu": { "cores": "30-40", "features": ["Dynamic Caching", "Hardware Ray Tracing"] },
-    "neuralEngine": { "cores": 16, "tops": 18 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 128, "bandwidthGBs": "300-400" },
-    "benchmarks": { "geekbench6SingleCore": 3150, "geekbench6MultiCore": 21000, "metalScore": 150000 },
-    "devices": ["MacBook Pro 14\" (2023)", "MacBook Pro 16\" (2023)"],
-    "highlights": ["最大12個のPコアによる圧倒的CPUスループット", "グラフィックレンダリングの最適化"],
+    "cpu": {
+      "totalCores": 16,
+      "performanceCores": 12,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "4.05 GHz"
+    },
+    "gpu": {
+      "cores": "30-40",
+      "features": [
+        "Dynamic Caching",
+        "Hardware Ray Tracing"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 18
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 128,
+      "bandwidthGBs": "300-400"
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3070,
+      "geekbench6MultiCore": 21405,
+      "metalScore": 158466
+    },
+    "devices": [
+      "MacBook Pro 14\" (2023)",
+      "MacBook Pro 16\" (2023)"
+    ],
+    "highlights": [
+      "最大12個のPコアによる圧倒的CPUスループット",
+      "グラフィックレンダリングの最適化"
+    ],
     "color": "#45B7D1"
   },
   {
@@ -206,13 +517,40 @@
     "releaseDate": "2025-03",
     "processNode": "3nm",
     "transistors": "184 billion",
-    "cpu": { "totalCores": 32, "performanceCores": 24, "efficiencyCores": 8, "maxClockSpeed": "4.05 GHz" },
-    "gpu": { "cores": "60-80", "features": ["Dynamic Caching", "Hardware Ray Tracing"] },
-    "neuralEngine": { "cores": 32, "tops": 36 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 192, "bandwidthGBs": 800 },
-    "benchmarks": { "geekbench6SingleCore": 3200, "geekbench6MultiCore": 38000, "metalScore": 280000 },
-    "devices": ["Mac Studio (2025)"],
-    "highlights": ["3nmプロセスの究極形", "AIとプロ用途の両方で無類の強さ"],
+    "cpu": {
+      "totalCores": 32,
+      "performanceCores": 24,
+      "efficiencyCores": 8,
+      "maxClockSpeed": "4.05 GHz"
+    },
+    "gpu": {
+      "cores": "60-80",
+      "features": [
+        "Dynamic Caching",
+        "Hardware Ray Tracing"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 32,
+      "tops": 36
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 192,
+      "bandwidthGBs": 800
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3200,
+      "geekbench6MultiCore": 38000,
+      "metalScore": 280000
+    },
+    "devices": [
+      "Mac Studio (2025)"
+    ],
+    "highlights": [
+      "3nmプロセスの究極形",
+      "AIとプロ用途の両方で無類の強さ"
+    ],
     "color": "#45B7D1"
   },
   {
@@ -224,13 +562,43 @@
     "releaseDate": "2024-05",
     "processNode": "3nm (2nd gen)",
     "transistors": "28 billion",
-    "cpu": { "totalCores": 10, "performanceCores": 4, "efficiencyCores": 6, "maxClockSpeed": "4.4 GHz" },
-    "gpu": { "cores": "10", "features": ["Dynamic Caching", "Hardware-accelerated Ray Tracing", "Mesh Shading"] },
-    "neuralEngine": { "cores": 16, "tops": 38 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 32, "bandwidthGBs": 120 },
-    "benchmarks": { "geekbench6SingleCore": 3800, "geekbench6MultiCore": 14500, "metalScore": 53000 },
-    "devices": ["iPad Pro (M4)", "Mac mini (2024)"],
-    "highlights": ["第2世代3nmプロセス", "超強力な38TOPS Neural Engine", "タンデムOLED対応ディスプレイエンジン"],
+    "cpu": {
+      "totalCores": 10,
+      "performanceCores": 4,
+      "efficiencyCores": 6,
+      "maxClockSpeed": "4.4 GHz"
+    },
+    "gpu": {
+      "cores": "10",
+      "features": [
+        "Dynamic Caching",
+        "Hardware-accelerated Ray Tracing",
+        "Mesh Shading"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 38
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 32,
+      "bandwidthGBs": 120
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3753,
+      "geekbench6MultiCore": 14500,
+      "metalScore": 54000
+    },
+    "devices": [
+      "iPad Pro (M4)",
+      "Mac mini (2024)"
+    ],
+    "highlights": [
+      "第2世代3nmプロセス",
+      "超強力な38TOPS Neural Engine",
+      "タンデムOLED対応ディスプレイエンジン"
+    ],
     "color": "#96CEB4"
   },
   {
@@ -241,13 +609,41 @@
     "variant": "pro",
     "releaseDate": "2024-11",
     "processNode": "3nm (2nd gen)",
-    "cpu": { "totalCores": 14, "performanceCores": 10, "efficiencyCores": 4, "maxClockSpeed": "4.4 GHz" },
-    "gpu": { "cores": "16-20", "features": ["Dynamic Caching", "Hardware Ray Tracing"] },
-    "neuralEngine": { "cores": 16, "tops": 38 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 48, "bandwidthGBs": 273 },
-    "benchmarks": { "geekbench6SingleCore": 3850, "geekbench6MultiCore": 22000, "metalScore": 95000 },
-    "devices": ["MacBook Pro 14\" (2024)", "Mac mini (2024)"],
-    "highlights": ["M3 Maxに迫るマルチコア性能", "Thunderbolt 5対応"],
+    "cpu": {
+      "totalCores": 14,
+      "performanceCores": 10,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "4.4 GHz"
+    },
+    "gpu": {
+      "cores": "16-20",
+      "features": [
+        "Dynamic Caching",
+        "Hardware Ray Tracing"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 38
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 48,
+      "bandwidthGBs": 273
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3912,
+      "geekbench6MultiCore": 22762,
+      "metalScore": 110000
+    },
+    "devices": [
+      "MacBook Pro 14\" (2024)",
+      "Mac mini (2024)"
+    ],
+    "highlights": [
+      "M3 Maxに迫るマルチコア性能",
+      "Thunderbolt 5対応"
+    ],
     "color": "#96CEB4"
   },
   {
@@ -258,13 +654,41 @@
     "variant": "max",
     "releaseDate": "2024-11",
     "processNode": "3nm (2nd gen)",
-    "cpu": { "totalCores": 16, "performanceCores": 12, "efficiencyCores": 4, "maxClockSpeed": "4.4 GHz" },
-    "gpu": { "cores": "32-40", "features": ["Dynamic Caching", "Dual ProRes engines"] },
-    "neuralEngine": { "cores": 16, "tops": 38 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 128, "bandwidthGBs": 546 },
-    "benchmarks": { "geekbench6SingleCore": 3950, "geekbench6MultiCore": 26000, "metalScore": 170000 },
-    "devices": ["MacBook Pro 14\" (2024)", "MacBook Pro 16\" (2024)"],
-    "highlights": ["546GB/sの広帯域とThunderbolt 5", "比類なきポータブルの頂点"],
+    "cpu": {
+      "totalCores": 16,
+      "performanceCores": 12,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "4.4 GHz"
+    },
+    "gpu": {
+      "cores": "32-40",
+      "features": [
+        "Dynamic Caching",
+        "Dual ProRes engines"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 38
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 128,
+      "bandwidthGBs": 546
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 4060,
+      "geekbench6MultiCore": 26675,
+      "metalScore": 192500
+    },
+    "devices": [
+      "MacBook Pro 14\" (2024)",
+      "MacBook Pro 16\" (2024)"
+    ],
+    "highlights": [
+      "546GB/sの広帯域とThunderbolt 5",
+      "比類なきポータブルの頂点"
+    ],
     "color": "#96CEB4"
   },
   {
@@ -275,13 +699,44 @@
     "variant": "base",
     "releaseDate": "2025-10",
     "processNode": "3nm",
-    "cpu": { "totalCores": 10, "performanceCores": 0, "efficiencyCores": 6, "superCores": 4, "maxClockSpeed": "4.8 GHz" },
-    "gpu": { "cores": "8-10", "features": ["Neural Accelerator integrated", "Dynamic Caching v2"] },
-    "neuralEngine": { "cores": 16, "tops": 45 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 32, "bandwidthGBs": 153.6 },
-    "benchmarks": { "geekbench6SingleCore": 4200, "geekbench6MultiCore": 17800, "metalScore": 65000 },
-    "devices": ["MacBook Pro 14\" (2025)", "MacBook Air 13\" (2025)", "iPad Pro (M5)"],
-    "highlights": ["Superコア採用の新アーキテクチャ", "GPUにNeural Accelerator統合", "M1比で2倍以上のCPU性能"],
+    "cpu": {
+      "totalCores": 10,
+      "performanceCores": 0,
+      "efficiencyCores": 6,
+      "superCores": 4,
+      "maxClockSpeed": "4.8 GHz"
+    },
+    "gpu": {
+      "cores": "8-10",
+      "features": [
+        "Neural Accelerator integrated",
+        "Dynamic Caching v2"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 45
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 32,
+      "bandwidthGBs": 153.6
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 4200,
+      "geekbench6MultiCore": 17800,
+      "metalScore": 65000
+    },
+    "devices": [
+      "MacBook Pro 14\" (2025)",
+      "MacBook Air 13\" (2025)",
+      "iPad Pro (M5)"
+    ],
+    "highlights": [
+      "Superコア採用の新アーキテクチャ",
+      "GPUにNeural Accelerator統合",
+      "M1比で2倍以上のCPU性能"
+    ],
     "color": "#DDA0DD"
   },
   {
@@ -292,13 +747,41 @@
     "variant": "pro",
     "releaseDate": "2026-03",
     "processNode": "3nm (Fusion)",
-    "cpu": { "totalCores": 18, "performanceCores": 12, "efficiencyCores": 0, "superCores": 6, "maxClockSpeed": "4.8 GHz" },
-    "gpu": { "cores": "16-20", "features": ["Neural Accelerator integrated", "Dual Video Engines"] },
-    "neuralEngine": { "cores": 16, "tops": 45 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 64, "bandwidthGBs": 307 },
-    "benchmarks": { "geekbench6SingleCore": 4300, "geekbench6MultiCore": 26000, "metalScore": 120000 },
-    "devices": ["MacBook Pro 14\" (2026)"],
-    "highlights": ["Fusion Architecture採用の2ダイ構成", "Proグレード初のSuperコア搭載"],
+    "cpu": {
+      "totalCores": 18,
+      "performanceCores": 12,
+      "efficiencyCores": 0,
+      "superCores": 6,
+      "maxClockSpeed": "4.8 GHz"
+    },
+    "gpu": {
+      "cores": "16-20",
+      "features": [
+        "Neural Accelerator integrated",
+        "Dual Video Engines"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 45
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 64,
+      "bandwidthGBs": 307
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 4300,
+      "geekbench6MultiCore": 26000,
+      "metalScore": 120000
+    },
+    "devices": [
+      "MacBook Pro 14\" (2026)"
+    ],
+    "highlights": [
+      "Fusion Architecture採用の2ダイ構成",
+      "Proグレード初のSuperコア搭載"
+    ],
     "color": "#DDA0DD"
   },
   {
@@ -309,13 +792,42 @@
     "variant": "max",
     "releaseDate": "2026-03",
     "processNode": "3nm (Fusion)",
-    "cpu": { "totalCores": 18, "performanceCores": 12, "efficiencyCores": 0, "superCores": 6, "maxClockSpeed": "4.8 GHz" },
-    "gpu": { "cores": "32-40", "features": ["Neural Accelerator integrated", "Quad Video Engines"] },
-    "neuralEngine": { "cores": 16, "tops": 45 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 128, "bandwidthGBs": "460-614" },
-    "benchmarks": { "geekbench6SingleCore": 4350, "geekbench6MultiCore": 30500, "metalScore": 210000 },
-    "devices": ["MacBook Pro 16\" (2026)", "Mac Studio (2026)"],
-    "highlights": ["脅威的な614GB/sのメモリ帯域", "クリエイティビティの常識を覆すレンダリング速度"],
+    "cpu": {
+      "totalCores": 18,
+      "performanceCores": 12,
+      "efficiencyCores": 0,
+      "superCores": 6,
+      "maxClockSpeed": "4.8 GHz"
+    },
+    "gpu": {
+      "cores": "32-40",
+      "features": [
+        "Neural Accelerator integrated",
+        "Quad Video Engines"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 45
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 128,
+      "bandwidthGBs": "460-614"
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 4350,
+      "geekbench6MultiCore": 30500,
+      "metalScore": 210000
+    },
+    "devices": [
+      "MacBook Pro 16\" (2026)",
+      "Mac Studio (2026)"
+    ],
+    "highlights": [
+      "脅威的な614GB/sのメモリ帯域",
+      "クリエイティビティの常識を覆すレンダリング速度"
+    ],
     "color": "#DDA0DD"
   },
   {
@@ -327,13 +839,43 @@
     "releaseDate": "2021-09",
     "processNode": "5nm",
     "transistors": "15 billion",
-    "cpu": { "totalCores": 6, "performanceCores": 2, "efficiencyCores": 4, "maxClockSpeed": "3.23 GHz" },
-    "gpu": { "cores": "4-5", "features": ["Custom Apple designed"] },
-    "neuralEngine": { "cores": 16, "tops": 15.8 },
-    "memory": { "type": "LPDDR4X", "maxCapacityGB": 6, "bandwidthGBs": 34.1 },
-    "benchmarks": { "geekbench6SingleCore": 2200, "geekbench6MultiCore": 5400, "antutu": 800000 },
-    "devices": ["iPhone 13", "iPhone 13 Pro", "iPhone SE (3rd gen)", "iPad mini (6th gen)"],
-    "highlights": ["競合より最大50%速いCPU", "シネマティックモードを可能にするISP", "強固な電力効率"],
+    "cpu": {
+      "totalCores": 6,
+      "performanceCores": 2,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.23 GHz"
+    },
+    "gpu": {
+      "cores": "4-5",
+      "features": [
+        "Custom Apple designed"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 15.8
+    },
+    "memory": {
+      "type": "LPDDR4X",
+      "maxCapacityGB": 6,
+      "bandwidthGBs": 34.1
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2332,
+      "geekbench6MultiCore": 5736,
+      "antutu": 1294678
+    },
+    "devices": [
+      "iPhone 13",
+      "iPhone 13 Pro",
+      "iPhone SE (3rd gen)",
+      "iPad mini (6th gen)"
+    ],
+    "highlights": [
+      "競合より最大50%速いCPU",
+      "シネマティックモードを可能にするISP",
+      "強固な電力効率"
+    ],
     "color": "#FFB347"
   },
   {
@@ -345,13 +887,40 @@
     "releaseDate": "2022-09",
     "processNode": "4nm",
     "transistors": "16 billion",
-    "cpu": { "totalCores": 6, "performanceCores": 2, "efficiencyCores": 4, "maxClockSpeed": "3.46 GHz" },
-    "gpu": { "cores": 5, "features": ["Increased Memory Bandwidth"] },
-    "neuralEngine": { "cores": 16, "tops": 17 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 6, "bandwidthGBs": 51.2 },
-    "benchmarks": { "geekbench6SingleCore": 2500, "geekbench6MultiCore": 6400, "antutu": 950000 },
-    "devices": ["iPhone 14 Pro", "iPhone 15"],
-    "highlights": ["4nmプロセスを採用した最初のモバイルチップ", "LPDDR5による帯域幅の強化"],
+    "cpu": {
+      "totalCores": 6,
+      "performanceCores": 2,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.46 GHz"
+    },
+    "gpu": {
+      "cores": 5,
+      "features": [
+        "Increased Memory Bandwidth"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 17
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 6,
+      "bandwidthGBs": 51.2
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2550,
+      "geekbench6MultiCore": 6400,
+      "antutu": 1450000
+    },
+    "devices": [
+      "iPhone 14 Pro",
+      "iPhone 15"
+    ],
+    "highlights": [
+      "4nmプロセスを採用した最初のモバイルチップ",
+      "LPDDR5による帯域幅の強化"
+    ],
     "color": "#87CEEB"
   },
   {
@@ -363,13 +932,42 @@
     "releaseDate": "2023-09",
     "processNode": "3nm",
     "transistors": "19 billion",
-    "cpu": { "totalCores": 6, "performanceCores": 2, "efficiencyCores": 4, "maxClockSpeed": "3.78 GHz" },
-    "gpu": { "cores": 6, "features": ["Hardware Ray Tracing", "Mesh Shading"] },
-    "neuralEngine": { "cores": 16, "tops": 35 },
-    "memory": { "type": "LPDDR5", "maxCapacityGB": 8, "bandwidthGBs": 51.2 },
-    "benchmarks": { "geekbench6SingleCore": 2900, "geekbench6MultiCore": 7200, "antutu": 1500000 },
-    "devices": ["iPhone 15 Pro", "iPhone 15 Pro Max", "iPad mini (A17 Pro)"],
-    "highlights": ["スマートフォンの常識を破るハードウェアレイトレーシング", "初の「Pro」ネームAシリーズ"],
+    "cpu": {
+      "totalCores": 6,
+      "performanceCores": 2,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.78 GHz"
+    },
+    "gpu": {
+      "cores": 6,
+      "features": [
+        "Hardware Ray Tracing",
+        "Mesh Shading"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 35
+    },
+    "memory": {
+      "type": "LPDDR5",
+      "maxCapacityGB": 8,
+      "bandwidthGBs": 51.2
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 2940,
+      "geekbench6MultiCore": 7200,
+      "antutu": 1500000
+    },
+    "devices": [
+      "iPhone 15 Pro",
+      "iPhone 15 Pro Max",
+      "iPad mini (A17 Pro)"
+    ],
+    "highlights": [
+      "スマートフォンの常識を破るハードウェアレイトレーシング",
+      "初の「Pro」ネームAシリーズ"
+    ],
     "color": "#98D8C8"
   },
   {
@@ -380,13 +978,40 @@
     "variant": "base",
     "releaseDate": "2024-09",
     "processNode": "3nm (2nd gen)",
-    "cpu": { "totalCores": 6, "performanceCores": 2, "efficiencyCores": 4, "maxClockSpeed": "3.8 GHz" },
-    "gpu": { "cores": "4-5", "features": ["Apple Intelligence Optimized"] },
-    "neuralEngine": { "cores": 16, "tops": 35 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 8, "bandwidthGBs": 60 },
-    "benchmarks": { "geekbench6SingleCore": 3100, "geekbench6MultiCore": 8000, "antutu": 1600000 },
-    "devices": ["iPhone 16", "iPhone 16 Plus"],
-    "highlights": ["A17 Proをベースに最適化", "すべてのモデルでApple Intelligence対応"],
+    "cpu": {
+      "totalCores": 6,
+      "performanceCores": 2,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "3.8 GHz"
+    },
+    "gpu": {
+      "cores": "4-5",
+      "features": [
+        "Apple Intelligence Optimized"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 35
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 8,
+      "bandwidthGBs": 60
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3254,
+      "geekbench6MultiCore": 8070,
+      "antutu": 1790000
+    },
+    "devices": [
+      "iPhone 16",
+      "iPhone 16 Plus"
+    ],
+    "highlights": [
+      "A17 Proをベースに最適化",
+      "すべてのモデルでApple Intelligence対応"
+    ],
     "color": "#F7DC6F"
   },
   {
@@ -397,13 +1022,42 @@
     "variant": "pro",
     "releaseDate": "2024-09",
     "processNode": "3nm (2nd gen)",
-    "cpu": { "totalCores": 6, "performanceCores": 2, "efficiencyCores": 4, "maxClockSpeed": "4.05 GHz" },
-    "gpu": { "cores": 6, "features": ["Hardware Ray Tracing", "2x faster than A14"] },
-    "neuralEngine": { "cores": 16, "tops": 35 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 8, "bandwidthGBs": 60 },
-    "benchmarks": { "geekbench6SingleCore": 3400, "geekbench6MultiCore": 8500, "antutu": 1700000 },
-    "devices": ["iPhone 16 Pro", "iPhone 16 Pro Max"],
-    "highlights": ["第2世代3nmプロセス", "Apple Intelligenceに最適化されたNPU", "進化したハードウェアレイトレーシング"],
+    "cpu": {
+      "totalCores": 6,
+      "performanceCores": 2,
+      "efficiencyCores": 4,
+      "maxClockSpeed": "4.05 GHz"
+    },
+    "gpu": {
+      "cores": 6,
+      "features": [
+        "Hardware Ray Tracing",
+        "2x faster than A14"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 35
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 8,
+      "bandwidthGBs": 60
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3400,
+      "geekbench6MultiCore": 8400,
+      "antutu": 1850000
+    },
+    "devices": [
+      "iPhone 16 Pro",
+      "iPhone 16 Pro Max"
+    ],
+    "highlights": [
+      "第2世代3nmプロセス",
+      "Apple Intelligenceに最適化されたNPU",
+      "進化したハードウェアレイトレーシング"
+    ],
     "color": "#F7DC6F"
   },
   {
@@ -414,13 +1068,40 @@
     "variant": "base",
     "releaseDate": "2025-09",
     "processNode": "3nm (N3P)",
-    "cpu": { "totalCores": 6, "performanceCores": 2, "efficiencyCores": 4 },
-    "gpu": { "cores": "4-5", "features": ["Apple Intelligence optimized", "Low power modes"] },
-    "neuralEngine": { "cores": 16, "tops": 45 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 8, "bandwidthGBs": 60 },
-    "benchmarks": { "geekbench6SingleCore": 3500, "geekbench6MultiCore": 9000, "antutu": 1800000 },
-    "devices": ["iPhone 17", "iPhone 17 Plus"],
-    "highlights": ["N3Pプロセスによる電力効率の改善", "Neural Engineの大幅な強化"],
+    "cpu": {
+      "totalCores": 6,
+      "performanceCores": 2,
+      "efficiencyCores": 4
+    },
+    "gpu": {
+      "cores": "4-5",
+      "features": [
+        "Apple Intelligence optimized",
+        "Low power modes"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 45
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 8,
+      "bandwidthGBs": 60
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3500,
+      "geekbench6MultiCore": 9000,
+      "antutu": 1800000
+    },
+    "devices": [
+      "iPhone 17",
+      "iPhone 17 Plus"
+    ],
+    "highlights": [
+      "N3Pプロセスによる電力効率の改善",
+      "Neural Engineの大幅な強化"
+    ],
     "color": "#BB8FCE"
   },
   {
@@ -431,13 +1112,41 @@
     "variant": "pro",
     "releaseDate": "2025-09",
     "processNode": "3nm (N3P)",
-    "cpu": { "totalCores": 6, "performanceCores": 2, "efficiencyCores": 4 },
-    "gpu": { "cores": 6, "features": ["Desktop-class rendering", "Neural Accelerator"] },
-    "neuralEngine": { "cores": 16, "tops": 50 },
-    "memory": { "type": "LPDDR5X", "maxCapacityGB": 12, "bandwidthGBs": 76.8 },
-    "benchmarks": { "geekbench6SingleCore": 3800, "geekbench6MultiCore": 10000, "antutu": 2000000 },
-    "devices": ["iPhone 17 Pro", "iPhone Air"],
-    "highlights": ["TSMC N3Pプロセス", "12GBの大容量RAM", "デスクトップクラスのGPUアーキテクチャ"],
+    "cpu": {
+      "totalCores": 6,
+      "performanceCores": 2,
+      "efficiencyCores": 4
+    },
+    "gpu": {
+      "cores": 6,
+      "features": [
+        "Desktop-class rendering",
+        "Neural Accelerator"
+      ]
+    },
+    "neuralEngine": {
+      "cores": 16,
+      "tops": 50
+    },
+    "memory": {
+      "type": "LPDDR5X",
+      "maxCapacityGB": 12,
+      "bandwidthGBs": 76.8
+    },
+    "benchmarks": {
+      "geekbench6SingleCore": 3800,
+      "geekbench6MultiCore": 10000,
+      "antutu": 2000000
+    },
+    "devices": [
+      "iPhone 17 Pro",
+      "iPhone Air"
+    ],
+    "highlights": [
+      "TSMC N3Pプロセス",
+      "12GBの大容量RAM",
+      "デスクトップクラスのGPUアーキテクチャ"
+    ],
     "color": "#BB8FCE"
   }
 ]
